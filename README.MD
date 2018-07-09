@@ -1,0 +1,1 @@
+Simple program to translate texts using the Google Translate API.
