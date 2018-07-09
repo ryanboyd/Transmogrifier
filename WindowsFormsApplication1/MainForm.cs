@@ -31,15 +31,12 @@ namespace WindowsFormsApplication1
 
 
 
-            if (MessageBox.Show("In order to use this program, you must have a Google Cloud account and a Google Translate API key. " +
-                "If you have not done so already, you can set up your \"service account\" and get a key from here:" + Environment.NewLine + Environment.NewLine +
-                "https://cloud.google.com/translate/docs/reference/libraries#setting_up_authentication" + Environment.NewLine + Environment.NewLine +
+            if (MessageBox.Show("In order to use this program, you must have a Google Cloud Platform account. Within your account, you must also have a Project set up that has the Cloud Translate API enabled. " +
+                "Instructions on how to go through this process can be found here:" + Environment.NewLine + Environment.NewLine +
+                "http://toolbox.ryanb.cc/Transmogrifier_Key_Access.pdf" + Environment.NewLine + Environment.NewLine +
 
-                "You must also enable the Google Translate API from your console, located here:" + Environment.NewLine + Environment.NewLine +
-                "https://console.cloud.google.com/apis/library/translate.googleapis.com" + Environment.NewLine + Environment.NewLine +
-
-                "Once you have an account set up, you will need to download your credentials (i.e., your \"private key\" as a JSON file. " +
-                "When you have this file, click \"OK\" and you will be prompted to load your credentials in this program. " +
+                "This process will give you a Service Account Credentials file, which should be downloaded as a JSON file. " +
+                "When you have this file saved to your computer, click \"OK\" and you will be prompted to load your credentials in this program. " +
                 "Once you have loaded your credential file, this program will start." + Environment.NewLine + Environment.NewLine +
                 
                 "NOTE: This program does not share your credentials with any entity aside from Google." + Environment.NewLine + Environment.NewLine +
