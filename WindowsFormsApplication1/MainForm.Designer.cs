@@ -70,7 +70,7 @@
             // StartButton
             // 
             this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartButton.Location = new System.Drawing.Point(491, 304);
+            this.StartButton.Location = new System.Drawing.Point(497, 303);
             this.StartButton.Margin = new System.Windows.Forms.Padding(4);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(203, 39);
@@ -183,7 +183,7 @@
             // 
             this.ScanSubfolderCheckbox.AutoSize = true;
             this.ScanSubfolderCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScanSubfolderCheckbox.Location = new System.Drawing.Point(513, 355);
+            this.ScanSubfolderCheckbox.Location = new System.Drawing.Point(519, 354);
             this.ScanSubfolderCheckbox.Margin = new System.Windows.Forms.Padding(4);
             this.ScanSubfolderCheckbox.Name = "ScanSubfolderCheckbox";
             this.ScanSubfolderCheckbox.Size = new System.Drawing.Size(154, 24);
@@ -237,7 +237,7 @@
             this.MaxRetriesPerRequestTextbox.Name = "MaxRetriesPerRequestTextbox";
             this.MaxRetriesPerRequestTextbox.Size = new System.Drawing.Size(93, 31);
             this.MaxRetriesPerRequestTextbox.TabIndex = 23;
-            this.MaxRetriesPerRequestTextbox.Text = "3";
+            this.MaxRetriesPerRequestTextbox.Text = "5";
             this.MaxRetriesPerRequestTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MaxRetriesPerRequestTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -393,6 +393,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transmogrifier";
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

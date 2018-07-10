@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.IO;
 using Google.Cloud.Translation.V2;
 using System.Collections.Generic;
-using System.Threading;
 
 
 
@@ -24,43 +23,19 @@ namespace WindowsFormsApplication1
 
         string CredentialFile = "";
 
+        List<string> LanguageIndices = new List<string>();
+
         //this is what runs at initialization
         public MainForm()
         {
 
+           
 
-
-
-            if (MessageBox.Show("In order to use this program, you must have a Google Cloud Platform account. Within your account, you must also have a Project set up that has the Cloud Translate API enabled. " +
-                "Instructions on how to go through this process can be found here:" + Environment.NewLine + Environment.NewLine +
-                "http://toolbox.ryanb.cc/Transmogrifier_Key_Access.pdf" + Environment.NewLine + Environment.NewLine +
-
-                "This process will give you a Service Account Credentials file, which should be downloaded as a JSON file. " +
-                "When you have this file saved to your computer, click \"OK\" and you will be prompted to load your credentials in this program. " +
-                "Once you have loaded your credential file, this program will start." + Environment.NewLine + Environment.NewLine +
-                
-                "NOTE: This program does not share your credentials with any entity aside from Google." + Environment.NewLine + Environment.NewLine +
-                
-                "NOTE: The Google Translate API is *NOT* free. You are responsible for all charges from Google pertaining to your use of their API/cloud services. " +
-                "You can read about quotas / charges here:" + Environment.NewLine + Environment.NewLine +
-                "https://cloud.google.com/translate/quotas",
-                "Credential Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
-            {
-                System.Environment.Exit(1);
-            }
+            
 
             InitializeComponent();
 
-
-            if (openPrivateKeyDialog.ShowDialog() == DialogResult.Cancel) System.Environment.Exit(1);
-
-            CredentialFile = openPrivateKeyDialog.FileName;
-
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", CredentialFile);
-
-
-
-
+            
             foreach (var encoding in Encoding.GetEncodings())
             {
                 InputEncodingDropdown.Items.Add(encoding.Name);
@@ -87,6 +62,150 @@ namespace WindowsFormsApplication1
             }
 
 
+
+        }
+
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            int en_index = 0;
+            int de_index = 0;
+
+            Dictionary<string, string> LangCodeMap = new Dictionary<string, string>
+            {
+                { "af", "Afrikaans" },
+                { "sq", "Albanian" },
+                { "am", "Amharic" },
+                { "ar", "Arabic" },
+                { "hy", "Armenian" },
+                { "az", "Azeerbaijani" },
+                { "eu", "Basque" },
+                { "be", "Belarusian" },
+                { "bn", "Bengali" },
+                { "bs", "Bosnian" },
+                { "bg", "Bulgarian" },
+                { "ca", "Catalan" },
+                { "ceb", "Cebuano" },
+                { "zh-CN", "Chinese (Simplified)" },
+                { "zh", "Chinese (Simplified)" },
+                { "zh-TW", "Chinese (Traditional)" },
+                { "co", "Corsican" },
+                { "hr", "Croatian" },
+                { "cs", "Czech" },
+                { "da", "Danish" },
+                { "nl", "Dutch" },
+                { "en", "English" },
+                { "eo", "Esperanto" },
+                { "et", "Estonian" },
+                { "fi", "Finnish" },
+                { "fr", "French" },
+                { "fy", "Frisian" },
+                { "gl", "Galician" },
+                { "ka", "Georgian" },
+                { "de", "German" },
+                { "el", "Greek" },
+                { "gu", "Gujarati" },
+                { "ht", "Haitian Creole" },
+                { "ha", "Hausa" },
+                { "haw", "Hawaiian" },
+                { "iw", "Hebrew" },
+                { "hi", "Hindi" },
+                { "hmn", "Hmong" },
+                { "hu", "Hungarian" },
+                { "is", "Icelandic" },
+                { "ig", "Igbo" },
+                { "id", "Indonesian" },
+                { "ga", "Irish" },
+                { "it", "Italian" },
+                { "ja", "Japanese" },
+                { "jw", "Javanese" },
+                { "kn", "Kannada" },
+                { "kk", "Kazakh" },
+                { "km", "Khmer" },
+                { "ko", "Korean" },
+                { "ku", "Kurdish" },
+                { "ky", "Kyrgyz" },
+                { "lo", "Lao" },
+                { "la", "Latin" },
+                { "lv", "Latvian" },
+                { "lt", "Lithuanian" },
+                { "lb", "Luxembourgish" },
+                { "mk", "Macedonian" },
+                { "mg", "Malagasy" },
+                { "ms", "Malay" },
+                { "ml", "Malayalam" },
+                { "mt", "Maltese" },
+                { "mi", "Maori" },
+                { "mr", "Marathi" },
+                { "mn", "Mongolian" },
+                { "my", "Myanmar (Burmese)" },
+                { "ne", "Nepali" },
+                { "no", "Norwegian" },
+                { "ny", "Nyanja (Chichewa)" },
+                { "ps", "Pashto" },
+                { "fa", "Persian" },
+                { "pl", "Polish" },
+                { "pt", "Portuguese (Portugal, Brazil)" },
+                { "pa", "Punjabi" },
+                { "ro", "Romanian" },
+                { "ru", "Russian" },
+                { "sm", "Samoan" },
+                { "gd", "Scots Gaelic" },
+                { "sr", "Serbian" },
+                { "st", "Sesotho" },
+                { "sn", "Shona" },
+                { "sd", "Sindhi" },
+                { "si", "Sinhala (Sinhalese)" },
+                { "sk", "Slovak" },
+                { "sl", "Slovenian" },
+                { "so", "Somali" },
+                { "es", "Spanish" },
+                { "su", "Sundanese" },
+                { "sw", "Swahili" },
+                { "sv", "Swedish" },
+                { "tl", "Tagalog (Filipino)" },
+                { "tg", "Tajik" },
+                { "ta", "Tamil" },
+                { "te", "Telugu" },
+                { "th", "Thai" },
+                { "tr", "Turkish" },
+                { "uk", "Ukrainian" },
+                { "ur", "Urdu" },
+                { "uz", "Uzbek" },
+                { "vi", "Vietnamese" },
+                { "cy", "Welsh" },
+                { "xh", "Xhosa" },
+                { "yi", "Yiddish" },
+                { "yo", "Yoruba" },
+                { "zu", "Zulu" }
+        };
+
+
+            if (MessageBox.Show("In order to use this program, you must have a Google Cloud Platform account. Within your account, you must also have a Project set up that has the Cloud Translate API enabled. " +
+                "Instructions on how to go through this process can be found here:" + Environment.NewLine + Environment.NewLine +
+                "https://toolbox.ryanb.cc/GetTranslateKey.pdf" + Environment.NewLine + Environment.NewLine +
+
+                "This process will give you a Service Account Credentials file, which should be downloaded as a JSON file. " +
+                "Once you have your credentials file saved to your computer, click \"OK\" and you will be prompted to load your credentials in this program. " +
+                "After you have loaded your credential file, this program will start." + Environment.NewLine + Environment.NewLine +
+
+                "NOTE: This program does not share your credentials with any entity aside from Google. Do not share your credentials file with anyone." + Environment.NewLine + Environment.NewLine +
+
+                "NOTE: The Google Translate API is *NOT* free. You are responsible for all charges from Google. If you need to translate your texts but do not want to be charged for using the Google Translate API, you should manually paste your texts into the Google Translate webpage. " +
+                "You can read about quotas / charges here:" + Environment.NewLine + Environment.NewLine +
+                "https://cloud.google.com/translate/quotas",
+                "Credential Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
+            {
+                Environment.Exit(0);
+            }
+
+
+            if (openPrivateKeyDialog.ShowDialog() == DialogResult.Cancel) System.Environment.Exit(1);
+
+            CredentialFile = openPrivateKeyDialog.FileName;
+
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", CredentialFile);
+
             //InputTextLanguageBox.Items.Add("Automatically Detect Language");
 
             try
@@ -95,14 +214,30 @@ namespace WindowsFormsApplication1
 
                 foreach (var language in client.ListLanguages())
                 {
-                    InputTextLanguageBox.Items.Add(language.Code.ToString());
-                    OutputTextLanguageBox.Items.Add(language.Code.ToString());
+
+                    if (language.Code.ToString() == "en") en_index = InputTextLanguageBox.Items.Count;
+                    if (language.Code.ToString() == "de") de_index = InputTextLanguageBox.Items.Count;
+
+                    LanguageIndices.Add(language.Code.ToString());
+
+                    if (LangCodeMap.ContainsKey(language.Code.ToString()))
+                    {
+                        InputTextLanguageBox.Items.Add(language.Code.ToString() + " - " + LangCodeMap[language.Code.ToString()]);
+                        OutputTextLanguageBox.Items.Add(language.Code.ToString() + " - " + LangCodeMap[language.Code.ToString()]);
+                    }
+                    else
+                    {
+                        InputTextLanguageBox.Items.Add(language.Code.ToString());
+                        OutputTextLanguageBox.Items.Add(language.Code.ToString());
+                    }
+
+
                 }
 
                 try
                 {
-                    InputTextLanguageBox.SelectedIndex = InputTextLanguageBox.FindStringExact("de");
-                    OutputTextLanguageBox.SelectedIndex = OutputTextLanguageBox.FindStringExact("en");
+                    InputTextLanguageBox.SelectedIndex = de_index;
+                    OutputTextLanguageBox.SelectedIndex = en_index;
                 }
                 catch
                 {
@@ -111,31 +246,31 @@ namespace WindowsFormsApplication1
                 }
 
 
-                
+
 
             }
             catch
             {
-                MessageBox.Show("There was an issue with validating your credentials. Please double-check that you have enabled your Google Translate API account and that you have set up your service credentials.", "Client Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                System.Environment.Exit(1);
+                MessageBox.Show("There was an issue with validating your credentials. Please make sure that you are online, and double-check that you have enabled the Google Translate API for your project.", "Verification Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
             }
+
+            MessageBox.Show("Your credentials key has been validated by Google. The Transmogrifier is now ready to use.", "Validation success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.TopMost = true;
             this.Invalidate();
             this.Update();
             this.Refresh();
             this.BringToFront();
-            
+
             Application.DoEvents();
 
             this.TopMost = false;
 
 
 
-
-
         }
-        
+
 
 
 
@@ -145,6 +280,7 @@ namespace WindowsFormsApplication1
 
 
 
+            MessageBox.Show("In a moment, you will be asked to locate the folder that contains your .txt files that you would like to translate.", "Locate your input files", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             FolderBrowser.Description = "Please choose the location of your .txt files to process";
             if (FolderBrowser.ShowDialog() != DialogResult.Cancel)
@@ -154,6 +290,8 @@ namespace WindowsFormsApplication1
 
                 if (BackgroundWorkerData.TextFileFolder != "")
                 {
+
+                    MessageBox.Show("In a moment, you will be asked to choose an output location. This is where your translated texts will be stored.", "Choose an output location", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     saveOutputDialog.Description = "Please choose a folder for your output files";
                     saveOutputDialog.SelectedPath = BackgroundWorkerData.TextFileFolder;
@@ -183,14 +321,12 @@ namespace WindowsFormsApplication1
                             BackgroundWorkerData.MaxRetries = 3;
                         }
 
-                        BackgroundWorkerData.OutputLang = OutputTextLanguageBox.SelectedItem.ToString();
-                        BackgroundWorkerData.InputLang = InputTextLanguageBox.SelectedItem.ToString();
+                        BackgroundWorkerData.OutputLang = LanguageIndices[OutputTextLanguageBox.SelectedIndex];
+                        BackgroundWorkerData.InputLang = LanguageIndices[InputTextLanguageBox.SelectedIndex];
                         
 
                         if (BackgroundWorkerData.OutputFileLocation != "")
                         {
-
-
 
                             StartButton.Enabled = false;
                             ScanSubfolderCheckbox.Enabled = false;
@@ -341,7 +477,7 @@ namespace WindowsFormsApplication1
                                                             sourceLanguage: BGWorkerData.InputLang,
                                                             targetLanguage: BGWorkerData.OutputLang);
 
-                            TranslatedText_Output.Append(response.TranslatedText);
+                            TranslatedText_Output.Append(response.TranslatedText + " ");
 
                         }
                         catch (Google.GoogleApiException ex)
@@ -352,7 +488,8 @@ namespace WindowsFormsApplication1
                                 if (ex.Error.Code == 403)
                                 {
 
-                                    if (ex.Error.Message.Contains("Daily Limit Exceeded")) {
+                                    if (ex.Error.Message.Contains("Daily Limit Exceeded"))
+                                    {
                                         //report what we're working on
                                         StatusLabel.Invoke((MethodInvoker)delegate
                                         {
@@ -370,12 +507,14 @@ namespace WindowsFormsApplication1
 
                                     }
 
-                                    else {
+                                    else
+                                    {
 
                                         if (e.Cancel) { break; }
 
                                         int retry_counter = 0;
-                                        while (retry_counter < BGWorkerData.MaxRetries) {
+                                        while (retry_counter < BGWorkerData.MaxRetries)
+                                        {
 
                                             retry_counter++;
 
@@ -424,7 +563,7 @@ namespace WindowsFormsApplication1
                                                                             sourceLanguage: BGWorkerData.InputLang,
                                                                             targetLanguage: BGWorkerData.OutputLang);
 
-                                                TranslatedText_Output.Append(response.TranslatedText);
+                                                TranslatedText_Output.Append(response.TranslatedText + " ");
 
                                                 retry_counter = BGWorkerData.MaxRetries;
 
@@ -435,14 +574,81 @@ namespace WindowsFormsApplication1
                                             }
 
 
+                                        }
+
+
+
                                     }
-
-
 
                                 }
 
-                            }
-                            else
+                                else if (ex.Error.Code == 429 || (ex.Error.Code >= 500 && ex.Error.Code < 600))
+                                {
+                                    int retry_counter = 0;
+                                    while (retry_counter < BGWorkerData.MaxRetries)
+                                    {
+
+                                        retry_counter++;
+
+                                        int TimerCounter = 0;
+                                        DateTime d = DateTime.Now;
+
+                                        while (TimerCounter < System.Math.Pow(retry_counter, 2))
+                                        {
+                                            TimeSpan ts = DateTime.Now.Subtract(d);
+                                            if (ts.Seconds >= 1)
+                                            {
+                                                //do some work 
+                                                TimerCounter += ts.Seconds;
+                                                d = DateTime.Now;
+
+                                                //report what we're working on
+                                                StatusLabel.Invoke((MethodInvoker)delegate
+                                                {
+                                                    StatusLabel.Text = "Status: Error " + ex.Error.Code.ToString() + "; " + ex.Error.Message + " -- Retrying in " + (BGWorkerData.DurationLength - TimerCounter + 1).ToString() + "...";
+                                                    StatusLabel.Invalidate();
+                                                    StatusLabel.Update();
+                                                    StatusLabel.Refresh();
+                                                    Application.DoEvents();
+                                                });
+
+
+
+                                            }
+
+                                        }
+
+                                        try
+                                        {
+
+                                            //report what we're working on
+                                            StatusLabel.Invoke((MethodInvoker)delegate
+                                            {
+                                                StatusLabel.Text = "Status: Sending request " + (i + 1).ToString() + "/" + readText_Chunked.Length.ToString() + " to API... Retry #" + retry_counter.ToString();
+                                                StatusLabel.Invalidate();
+                                                StatusLabel.Update();
+                                                StatusLabel.Refresh();
+                                                Application.DoEvents();
+                                            });
+
+                                            var response = client.TranslateText(readText_Chunked[i],
+                                                                        sourceLanguage: BGWorkerData.InputLang,
+                                                                        targetLanguage: BGWorkerData.OutputLang);
+
+                                            TranslatedText_Output.Append(response.TranslatedText + " ");
+
+                                            retry_counter = BGWorkerData.MaxRetries;
+
+                                        }
+                                        catch
+                                        {
+
+                                        }
+                                    }
+
+                                }
+
+                                else
                                 {
                                     //report what we're working on
                                     StatusLabel.Invoke((MethodInvoker)delegate
@@ -570,5 +776,7 @@ namespace WindowsFormsApplication1
         {
             System.Diagnostics.Process.Start("https://cloud.google.com/translate/docs/languages");
         }
+
+
     }
 }

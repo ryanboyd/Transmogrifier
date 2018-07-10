@@ -61,14 +61,14 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 33);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Transmogrifier v0.79";
+            this.label1.Text = "Transmogrifier v0.83";
             this.label1.UseWaitCursor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(141, 458);
+            this.label2.Location = new System.Drawing.Point(142, 458);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 21);
