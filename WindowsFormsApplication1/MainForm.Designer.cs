@@ -239,7 +239,7 @@
             this.MaxRetriesPerRequestTextbox.TabIndex = 23;
             this.MaxRetriesPerRequestTextbox.Text = "5";
             this.MaxRetriesPerRequestTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.MaxRetriesPerRequestTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.MaxRetriesPerRequestTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnsureNumericKeypress);
             // 
             // label7
             // 
@@ -273,7 +273,7 @@
             this.DurationLengthTextbox.TabIndex = 20;
             this.DurationLengthTextbox.Text = "100";
             this.DurationLengthTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DurationLengthTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.DurationLengthTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnsureNumericKeypress);
             // 
             // label8
             // 
@@ -296,7 +296,7 @@
             this.MaxCharsPerRequestTextbox.TabIndex = 16;
             this.MaxCharsPerRequestTextbox.Text = "5000";
             this.MaxCharsPerRequestTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.MaxCharsPerRequestTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.MaxCharsPerRequestTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnsureNumericKeypress);
             // 
             // label3
             // 
