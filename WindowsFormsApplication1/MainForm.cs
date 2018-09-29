@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 
 
-namespace WindowsFormsApplication1
+namespace TransmogrifierApplication
 {
 
 
@@ -196,11 +196,11 @@ namespace WindowsFormsApplication1
                 "https://cloud.google.com/translate/quotas",
                 "Credential Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
             {
-                Environment.Exit(0);
+                Application.Exit();
             }
 
 
-            if (openPrivateKeyDialog.ShowDialog() == DialogResult.Cancel) System.Environment.Exit(1);
+            if (openPrivateKeyDialog.ShowDialog() == DialogResult.Cancel) Application.Exit();
 
             CredentialFile = openPrivateKeyDialog.FileName;
 
@@ -252,7 +252,7 @@ namespace WindowsFormsApplication1
             catch
             {
                 MessageBox.Show("There was an issue with validating your credentials. Please make sure that you are online, and double-check that you have enabled the Google Translate API for your project.", "Verification Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
+                Application.Exit();
             }
 
             MessageBox.Show("Your credentials key has been validated by Google. The Transmogrifier is now ready to use.", "Validation success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -680,9 +680,13 @@ namespace WindowsFormsApplication1
 
 
              }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Transmogrifier encountered an issue somewhere while trying to translate your texts. The most common cause of this is trying to open your output file(s) while the program is still running. Did any of your input files move, or is your output file being opened/modified by another application?", "Error while translating", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Transmogrifier encountered an issue somewhere while trying to translate your texts. The most common cause of this is trying to open your output file(s) while the program is still running. Did any of your input files move, or is your output file being opened/modified by another application? " +
+                    "After clicking the \"OK\" Button, you will receive an error code. Please write down this error code (or take a screenshot) and contact the software's author (ryanb@ryanb.cc) for additional help.", "Error while translating", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(ex.ToString(), "Error Code", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
 

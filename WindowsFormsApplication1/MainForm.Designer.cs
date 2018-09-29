@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace TransmogrifierApplication
 {
     partial class MainForm
     {
@@ -70,10 +70,9 @@
             // StartButton
             // 
             this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartButton.Location = new System.Drawing.Point(497, 303);
-            this.StartButton.Margin = new System.Windows.Forms.Padding(4);
+            this.StartButton.Location = new System.Drawing.Point(373, 246);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(203, 39);
+            this.StartButton.Size = new System.Drawing.Size(152, 32);
             this.StartButton.TabIndex = 3;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -88,10 +87,9 @@
             // 
             this.FilenameLabel.AutoEllipsis = true;
             this.FilenameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FilenameLabel.Location = new System.Drawing.Point(13, 412);
-            this.FilenameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FilenameLabel.Location = new System.Drawing.Point(10, 335);
             this.FilenameLabel.Name = "FilenameLabel";
-            this.FilenameLabel.Size = new System.Drawing.Size(756, 27);
+            this.FilenameLabel.Size = new System.Drawing.Size(568, 22);
             this.FilenameLabel.TabIndex = 6;
             this.FilenameLabel.Text = "Waiting to process texts...";
             this.FilenameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,20 +99,18 @@
             this.InputEncodingDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputEncodingDropdown.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputEncodingDropdown.FormattingEnabled = true;
-            this.InputEncodingDropdown.Location = new System.Drawing.Point(8, 65);
-            this.InputEncodingDropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.InputEncodingDropdown.Location = new System.Drawing.Point(6, 53);
             this.InputEncodingDropdown.Name = "InputEncodingDropdown";
-            this.InputEncodingDropdown.Size = new System.Drawing.Size(329, 27);
+            this.InputEncodingDropdown.Size = new System.Drawing.Size(248, 23);
             this.InputEncodingDropdown.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 43);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 18);
+            this.label4.Size = new System.Drawing.Size(115, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Input File Encoding:";
             // 
@@ -127,11 +123,9 @@
             this.groupBox2.Controls.Add(this.InputEncodingDropdown);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(422, 13);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(316, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(347, 257);
+            this.groupBox2.Size = new System.Drawing.Size(260, 209);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Encoding Selection";
@@ -139,10 +133,9 @@
             // FileTypeTextbox
             // 
             this.FileTypeTextbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FileTypeTextbox.Location = new System.Drawing.Point(125, 191);
-            this.FileTypeTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.FileTypeTextbox.Location = new System.Drawing.Point(94, 155);
             this.FileTypeTextbox.Name = "FileTypeTextbox";
-            this.FileTypeTextbox.Size = new System.Drawing.Size(132, 31);
+            this.FileTypeTextbox.Size = new System.Drawing.Size(100, 26);
             this.FileTypeTextbox.TabIndex = 16;
             this.FileTypeTextbox.Text = "*.txt";
             // 
@@ -150,10 +143,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 197);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 18);
+            this.label2.Size = new System.Drawing.Size(89, 15);
             this.label2.TabIndex = 15;
             this.label2.Text = "Input File Type:";
             // 
@@ -162,20 +154,18 @@
             this.OutputEncodingDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.OutputEncodingDropdown.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputEncodingDropdown.FormattingEnabled = true;
-            this.OutputEncodingDropdown.Location = new System.Drawing.Point(7, 133);
-            this.OutputEncodingDropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.OutputEncodingDropdown.Location = new System.Drawing.Point(5, 108);
             this.OutputEncodingDropdown.Name = "OutputEncodingDropdown";
-            this.OutputEncodingDropdown.Size = new System.Drawing.Size(329, 27);
+            this.OutputEncodingDropdown.Size = new System.Drawing.Size(248, 23);
             this.OutputEncodingDropdown.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 111);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(2, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 18);
+            this.label1.Size = new System.Drawing.Size(124, 15);
             this.label1.TabIndex = 12;
             this.label1.Text = "Output File Encoding:";
             // 
@@ -183,10 +173,9 @@
             // 
             this.ScanSubfolderCheckbox.AutoSize = true;
             this.ScanSubfolderCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScanSubfolderCheckbox.Location = new System.Drawing.Point(519, 354);
-            this.ScanSubfolderCheckbox.Margin = new System.Windows.Forms.Padding(4);
+            this.ScanSubfolderCheckbox.Location = new System.Drawing.Point(389, 288);
             this.ScanSubfolderCheckbox.Name = "ScanSubfolderCheckbox";
-            this.ScanSubfolderCheckbox.Size = new System.Drawing.Size(154, 24);
+            this.ScanSubfolderCheckbox.Size = new System.Drawing.Size(131, 21);
             this.ScanSubfolderCheckbox.TabIndex = 13;
             this.ScanSubfolderCheckbox.Text = "Scan Subfolders";
             this.ScanSubfolderCheckbox.UseVisualStyleBackColor = true;
@@ -206,11 +195,9 @@
             this.groupBox1.Controls.Add(this.InputTextLanguageBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(23, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(17, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(374, 386);
+            this.groupBox1.Size = new System.Drawing.Size(280, 314);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Translation Options";
@@ -220,9 +207,10 @@
             this.LanguageCodesLinkLabel.AutoSize = true;
             this.LanguageCodesLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LanguageCodesLinkLabel.LinkArea = new System.Windows.Forms.LinkArea(0, 99);
-            this.LanguageCodesLinkLabel.Location = new System.Drawing.Point(64, 184);
+            this.LanguageCodesLinkLabel.Location = new System.Drawing.Point(48, 150);
+            this.LanguageCodesLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LanguageCodesLinkLabel.Name = "LanguageCodesLinkLabel";
-            this.LanguageCodesLinkLabel.Size = new System.Drawing.Size(241, 24);
+            this.LanguageCodesLinkLabel.Size = new System.Drawing.Size(193, 20);
             this.LanguageCodesLinkLabel.TabIndex = 24;
             this.LanguageCodesLinkLabel.TabStop = true;
             this.LanguageCodesLinkLabel.Text = "List of Google Language Codes";
@@ -232,10 +220,9 @@
             // MaxRetriesPerRequestTextbox
             // 
             this.MaxRetriesPerRequestTextbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxRetriesPerRequestTextbox.Location = new System.Drawing.Point(273, 336);
-            this.MaxRetriesPerRequestTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.MaxRetriesPerRequestTextbox.Location = new System.Drawing.Point(205, 273);
             this.MaxRetriesPerRequestTextbox.Name = "MaxRetriesPerRequestTextbox";
-            this.MaxRetriesPerRequestTextbox.Size = new System.Drawing.Size(93, 31);
+            this.MaxRetriesPerRequestTextbox.Size = new System.Drawing.Size(71, 26);
             this.MaxRetriesPerRequestTextbox.TabIndex = 23;
             this.MaxRetriesPerRequestTextbox.Text = "5";
             this.MaxRetriesPerRequestTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -245,10 +232,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 342);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(6, 278);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 18);
+            this.label7.Size = new System.Drawing.Size(147, 15);
             this.label7.TabIndex = 22;
             this.label7.Text = "Max Retries Per Request:";
             // 
@@ -256,20 +242,18 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 225);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(4, 183);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(322, 18);
+            this.label9.Size = new System.Drawing.Size(268, 15);
             this.label9.TabIndex = 21;
             this.label9.Text = "Request Parameters (Defaults Recommended):";
             // 
             // DurationLengthTextbox
             // 
             this.DurationLengthTextbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DurationLengthTextbox.Location = new System.Drawing.Point(273, 258);
-            this.DurationLengthTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.DurationLengthTextbox.Location = new System.Drawing.Point(205, 210);
             this.DurationLengthTextbox.Name = "DurationLengthTextbox";
-            this.DurationLengthTextbox.Size = new System.Drawing.Size(93, 31);
+            this.DurationLengthTextbox.Size = new System.Drawing.Size(71, 26);
             this.DurationLengthTextbox.TabIndex = 20;
             this.DurationLengthTextbox.Text = "100";
             this.DurationLengthTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -279,20 +263,18 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 264);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(6, 214);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(227, 18);
+            this.label8.Size = new System.Drawing.Size(189, 15);
             this.label8.TabIndex = 19;
             this.label8.Text = "Rate Limit Sleep Time (seconds):";
             // 
             // MaxCharsPerRequestTextbox
             // 
             this.MaxCharsPerRequestTextbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxCharsPerRequestTextbox.Location = new System.Drawing.Point(273, 297);
-            this.MaxCharsPerRequestTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.MaxCharsPerRequestTextbox.Location = new System.Drawing.Point(205, 241);
             this.MaxCharsPerRequestTextbox.Name = "MaxCharsPerRequestTextbox";
-            this.MaxCharsPerRequestTextbox.Size = new System.Drawing.Size(93, 31);
+            this.MaxCharsPerRequestTextbox.Size = new System.Drawing.Size(71, 26);
             this.MaxCharsPerRequestTextbox.TabIndex = 16;
             this.MaxCharsPerRequestTextbox.Text = "5000";
             this.MaxCharsPerRequestTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -302,10 +284,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 303);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 246);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 18);
+            this.label3.Size = new System.Drawing.Size(167, 15);
             this.label3.TabIndex = 15;
             this.label3.Text = "Max Characters Per Request:";
             // 
@@ -314,20 +295,18 @@
             this.OutputTextLanguageBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.OutputTextLanguageBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputTextLanguageBox.FormattingEnabled = true;
-            this.OutputTextLanguageBox.Location = new System.Drawing.Point(9, 133);
-            this.OutputTextLanguageBox.Margin = new System.Windows.Forms.Padding(4);
+            this.OutputTextLanguageBox.Location = new System.Drawing.Point(7, 108);
             this.OutputTextLanguageBox.Name = "OutputTextLanguageBox";
-            this.OutputTextLanguageBox.Size = new System.Drawing.Size(358, 27);
+            this.OutputTextLanguageBox.Size = new System.Drawing.Size(270, 23);
             this.OutputTextLanguageBox.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 111);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(4, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 18);
+            this.label5.Size = new System.Drawing.Size(131, 15);
             this.label5.TabIndex = 12;
             this.label5.Text = "Output Text Language:";
             // 
@@ -336,20 +315,18 @@
             this.InputTextLanguageBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputTextLanguageBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTextLanguageBox.FormattingEnabled = true;
-            this.InputTextLanguageBox.Location = new System.Drawing.Point(9, 65);
-            this.InputTextLanguageBox.Margin = new System.Windows.Forms.Padding(4);
+            this.InputTextLanguageBox.Location = new System.Drawing.Point(7, 53);
             this.InputTextLanguageBox.Name = "InputTextLanguageBox";
-            this.InputTextLanguageBox.Size = new System.Drawing.Size(358, 27);
+            this.InputTextLanguageBox.Size = new System.Drawing.Size(270, 23);
             this.InputTextLanguageBox.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 43);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(4, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 18);
+            this.label6.Size = new System.Drawing.Size(122, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "Input Text Language:";
             // 
@@ -364,20 +341,19 @@
             // 
             this.StatusLabel.AutoEllipsis = true;
             this.StatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StatusLabel.Location = new System.Drawing.Point(13, 444);
-            this.StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StatusLabel.Location = new System.Drawing.Point(10, 361);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(756, 27);
+            this.StatusLabel.Size = new System.Drawing.Size(568, 22);
             this.StatusLabel.TabIndex = 21;
             this.StatusLabel.Text = "Status: Nothing to report.";
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(782, 478);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(588, 395);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -386,10 +362,9 @@
             this.Controls.Add(this.ScanSubfolderCheckbox);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 525);
-            this.MinimumSize = new System.Drawing.Size(800, 525);
+            this.MaximumSize = new System.Drawing.Size(604, 434);
+            this.MinimumSize = new System.Drawing.Size(604, 434);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transmogrifier";
